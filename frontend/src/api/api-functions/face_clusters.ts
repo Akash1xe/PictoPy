@@ -28,6 +28,7 @@ export interface FacePhoto {
   path: string;
   thumbnailPath?: string | null;
   metadata?: ImageMetadata | null;
+  isFavourite?: boolean;
 }
 
 export interface ClusterImage extends FacePhoto {
