@@ -111,6 +111,7 @@ def sample_cluster_images():
             "image_path": "/path/to/image1.jpg",
             "thumbnail_path": "/path/to/thumb1.jpg",
             "metadata": {"camera": "Canon"},
+            "isFavourite": True,
             "face_id": 101,
             "confidence": 0.95,
             "bbox": {"x": 100, "y": 200, "width": 150, "height": 200},
@@ -120,6 +121,7 @@ def sample_cluster_images():
             "image_path": "/path/to/image2.jpg",
             "thumbnail_path": "/path/to/thumb2.jpg",
             "metadata": {"camera": "Nikon"},
+            "isFavourite": False,
             "face_id": 102,
             "confidence": 0.87,
             "bbox": {"x": 50, "y": 100, "width": 120, "height": 160},
@@ -372,6 +374,8 @@ class TestFaceClustersAPI:
         first_image = data["data"]["images"][0]
         assert first_image["id"] == "img_1"
         assert first_image["path"] == "/path/to/image1.jpg"
+        assert first_image["isFavourite"] is True
+        assert data["data"]["images"][1]["isFavourite"] is False
         assert first_image["face_id"] == 101
         assert first_image["confidence"] == 0.95
 
@@ -809,6 +813,44 @@ def make_images(db_path: str, *image_ids: str) -> None:
     )
     conn.commit()
     conn.close()
+
+
+class TestClusterImageFavoriteQuery:
+    def test_returns_persisted_favorite_state(self, isolated_cluster_db):
+        make_images(isolated_cluster_db, "img-favorite", "img-regular")
+        face_clusters_db.db_insert_clusters_batch(
+            [
+                {
+                    "cluster_id": "person-1",
+                    "cluster_name": "Person",
+                    "face_image_base64": None,
+                }
+            ]
+        )
+
+        with closing(sqlite3.connect(isolated_cluster_db)) as conn:
+            conn.execute(
+                "UPDATE images SET isFavourite = 1 WHERE id = ?",
+                ("img-favorite",),
+            )
+            conn.commit()
+
+        for image_id in ("img-favorite", "img-regular"):
+            faces_db.db_insert_face_embeddings(
+                image_id=image_id,
+                embeddings=np.ones(128),
+                confidence=0.9,
+                bbox={"x": 0, "y": 0, "width": 10, "height": 10},
+                cluster_id="person-1",
+            )
+
+        images = {
+            image["image_id"]: image
+            for image in face_clusters_db.db_get_images_by_cluster_id("person-1")
+        }
+
+        assert images["img-favorite"]["isFavourite"] is True
+        assert images["img-regular"]["isFavourite"] is False
 
 
 class TestEmptyClusterCleanup:
