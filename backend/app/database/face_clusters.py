@@ -1,6 +1,6 @@
 import math
 import sqlite3
-from typing import Optional, List, Dict, Tuple, TypedDict, Union
+from typing import Any, Optional, List, Dict, Tuple, TypedDict, Union
 from app.config.settings import DATABASE_PATH
 from app.logging.setup_logging import get_logger
 
@@ -20,6 +20,17 @@ class ClusterData(TypedDict):
 
 
 ClusterMap = Dict[ClusterId, ClusterData]
+
+
+class ClusterImageData(TypedDict):
+    image_id: str
+    image_path: str
+    thumbnail_path: Optional[str]
+    metadata: Optional[Dict[str, Any]]
+    isFavourite: bool
+    face_id: int
+    confidence: Optional[float]
+    bbox: Optional[Dict[str, Union[int, float]]]
 
 
 def _connect() -> sqlite3.Connection:
@@ -348,7 +359,7 @@ def db_get_all_clusters_with_face_counts() -> (
 
 def db_get_images_by_cluster_id(
     cluster_id: ClusterId,
-) -> List[Dict[str, Union[str, int]]]:
+) -> List[ClusterImageData]:
     """
     Get all images that contain faces belonging to a specific cluster.
 
@@ -358,7 +369,7 @@ def db_get_images_by_cluster_id(
     Returns:
         List of dictionaries containing image data with face information
     """
-    conn = sqlite3.connect(DATABASE_PATH)
+    conn = _connect()
     cursor = conn.cursor()
 
     try:
@@ -369,6 +380,7 @@ def db_get_images_by_cluster_id(
                 i.path as image_path,
                 i.thumbnailPath as thumbnail_path,
                 i.metadata,
+                i.isFavourite,
                 f.face_id,
                 f.confidence,
                 f.bbox
@@ -391,6 +403,7 @@ def db_get_images_by_cluster_id(
                 image_path,
                 thumbnail_path,
                 metadata,
+                is_favourite,
                 face_id,
                 confidence,
                 bbox_json,
@@ -414,6 +427,7 @@ def db_get_images_by_cluster_id(
                     "image_path": image_path,
                     "thumbnail_path": thumbnail_path,
                     "metadata": metadata_dict,
+                    "isFavourite": bool(is_favourite),
                     "face_id": face_id,
                     "confidence": confidence,
                     "bbox": bbox,
