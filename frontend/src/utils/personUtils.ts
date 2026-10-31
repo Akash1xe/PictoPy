@@ -5,7 +5,7 @@ export function getPersonName(cluster: Cluster): string {
   return cluster.cluster_name || `Person ${cluster.cluster_id.slice(-4)}`;
 }
 
-/** Face routes leave out the gallery's bookkeeping fields; fill them in. */
+/** Face routes omit folder/tag fields; preserve the favorite status they return. */
 export function facePhotoToImage(photo: FacePhoto): Image {
   return {
     id: photo.id,
@@ -14,6 +14,7 @@ export function facePhotoToImage(photo: FacePhoto): Image {
     metadata: photo.metadata ?? undefined,
     folder_id: '',
     isTagged: true,
+    isFavourite: photo.isFavourite ?? false,
   };
 }
 
