@@ -93,22 +93,22 @@
               }
             }
           },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__folders__ErrorResponse"
-                }
-              }
-            }
-          },
           "422": {
             "description": "Validation Error",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__folders__ErrorResponse"
                 }
               }
             }
@@ -155,22 +155,22 @@
               }
             }
           },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__folders__ErrorResponse"
-                }
-              }
-            }
-          },
           "422": {
             "description": "Validation Error",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__folders__ErrorResponse"
                 }
               }
             }
@@ -217,22 +217,22 @@
               }
             }
           },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__folders__ErrorResponse"
-                }
-              }
-            }
-          },
           "422": {
             "description": "Validation Error",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__folders__ErrorResponse"
                 }
               }
             }
@@ -279,22 +279,22 @@
               }
             }
           },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__folders__ErrorResponse"
-                }
-              }
-            }
-          },
           "422": {
             "description": "Validation Error",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__folders__ErrorResponse"
                 }
               }
             }
@@ -351,22 +351,22 @@
               }
             }
           },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__folders__ErrorResponse"
-                }
-              }
-            }
-          },
           "422": {
             "description": "Validation Error",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__folders__ErrorResponse"
                 }
               }
             }
@@ -526,22 +526,22 @@
               }
             }
           },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponseEnvelope"
-                }
-              }
-            }
-          },
           "422": {
             "description": "Validation Error",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseEnvelope"
                 }
               }
             }
@@ -925,16 +925,6 @@
               }
             }
           },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__images__ErrorResponse"
-                }
-              }
-            },
-            "description": "Internal Server Error"
-          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -944,6 +934,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__images__ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           }
         }
       }
@@ -1000,16 +1000,6 @@
             },
             "description": "Not Found"
           },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__images__ErrorResponse"
-                }
-              }
-            },
-            "description": "Internal Server Error"
-          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -1019,6 +1009,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__images__ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           }
         }
       }
@@ -1076,16 +1076,6 @@
             },
             "description": "Not Found"
           },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__images__ErrorResponse"
-                }
-              }
-            },
-            "description": "Internal Server Error"
-          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -1095,6 +1085,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__images__ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           }
         }
       }
@@ -1213,16 +1213,6 @@
             },
             "description": "Bad Request"
           },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__videos__ErrorResponse"
-                }
-              }
-            },
-            "description": "Internal Server Error"
-          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -1232,6 +1222,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__videos__ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           }
         }
       }
@@ -1289,16 +1289,6 @@
             },
             "description": "Not Found"
           },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__videos__ErrorResponse"
-                }
-              }
-            },
-            "description": "Internal Server Error"
-          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -1308,6 +1298,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__videos__ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           }
         }
       }
@@ -1457,22 +1457,22 @@
               }
             }
           },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__videos__ErrorResponse"
-                }
-              }
-            }
-          },
           "422": {
             "description": "Validation Error",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__videos__ErrorResponse"
                 }
               }
             }
@@ -1540,16 +1540,6 @@
             },
             "description": "Not Found"
           },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__face_clusters__ErrorResponse"
-                }
-              }
-            },
-            "description": "Internal Server Error"
-          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -1559,6 +1549,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__face_clusters__ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           }
         }
       }
@@ -1635,16 +1635,6 @@
             },
             "description": "Not Found"
           },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__face_clusters__ErrorResponse"
-                }
-              }
-            },
-            "description": "Internal Server Error"
-          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -1654,6 +1644,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__face_clusters__ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           }
         }
       }
@@ -1712,16 +1712,6 @@
             },
             "description": "Bad Request"
           },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__face_clusters__ErrorResponse"
-                }
-              }
-            },
-            "description": "Internal Server Error"
-          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -1731,6 +1721,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__face_clusters__ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           }
         }
       }
@@ -1816,22 +1816,22 @@
               }
             }
           },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__face_clusters__ErrorResponse"
-                }
-              }
-            }
-          },
           "422": {
             "description": "Validation Error",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__face_clusters__ErrorResponse"
                 }
               }
             }
@@ -1908,22 +1908,22 @@
               }
             }
           },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__user_preferences__ErrorResponse"
-                }
-              }
-            }
-          },
           "422": {
             "description": "Validation Error",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__user_preferences__ErrorResponse"
                 }
               }
             }
@@ -1970,22 +1970,22 @@
               }
             }
           },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__memories__ErrorResponse"
-                }
-              }
-            }
-          },
           "422": {
             "description": "Validation Error",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__memories__ErrorResponse"
                 }
               }
             }
@@ -2147,16 +2147,6 @@
               }
             }
           },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__memories__ErrorResponse"
-                }
-              }
-            },
-            "description": "Internal Server Error"
-          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -2166,6 +2156,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__memories__ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           }
         }
       }
@@ -2210,16 +2210,6 @@
             },
             "description": "Not Found"
           },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__memories__ErrorResponse"
-                }
-              }
-            },
-            "description": "Internal Server Error"
-          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -2229,6 +2219,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__memories__ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           }
         }
       },
@@ -2291,16 +2291,6 @@
             },
             "description": "Not Found"
           },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__memories__ErrorResponse"
-                }
-              }
-            },
-            "description": "Internal Server Error"
-          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -2310,6 +2300,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__memories__ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           }
         }
       },
@@ -2352,16 +2352,6 @@
             },
             "description": "Not Found"
           },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/app__schemas__memories__ErrorResponse"
-                }
-              }
-            },
-            "description": "Internal Server Error"
-          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -2371,6 +2361,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/app__schemas__memories__ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           }
         }
       }
@@ -2467,7 +2467,7 @@
           "Share"
         ],
         "summary": "Create Share",
-        "description": "Issue a share token and make sure the network listener is up.\n\nAn album's local lock is deliberately not consulted: locking protects the\nalbum inside PictoPy, while sharing carries its own authorization \u2014 the\noptional password on this request, which is hashed and never read back.",
+        "description": "Issue a share token and make sure the network listener is up.\n\nAn album's local lock is deliberately not consulted: locking protects the\nalbum inside PictoPy, while sharing carries its own authorization — the\noptional password on this request, which is hashed and never read back.",
         "operationId": "create_share_share_albums__album_id__post",
         "parameters": [
           {
@@ -2518,16 +2518,6 @@
             },
             "description": "Not Found"
           },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ShareErrorResponseEnvelope"
-                }
-              }
-            },
-            "description": "Internal Server Error"
-          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -2537,6 +2527,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShareErrorResponseEnvelope"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           }
         }
       }
@@ -2580,16 +2580,6 @@
             },
             "description": "Not Found"
           },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ShareErrorResponseEnvelope"
-                }
-              }
-            },
-            "description": "Internal Server Error"
-          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -2599,6 +2589,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShareErrorResponseEnvelope"
+                }
+              }
+            },
+            "description": "Internal Server Error"
           }
         }
       }
@@ -3231,7 +3231,7 @@
             "anyOf": [
               {
                 "type": "integer",
-                "exclusiveMinimum": 0.0
+                "exclusiveMinimum": 0
               },
               {
                 "type": "null"
@@ -4408,6 +4408,11 @@
             ],
             "title": "Metadata"
           },
+          "isFavourite": {
+            "type": "boolean",
+            "title": "Isfavourite",
+            "default": false
+          },
           "face_id": {
             "type": "integer",
             "title": "Face Id"
@@ -4481,10 +4486,10 @@
           },
           "slide_duration_seconds": {
             "type": "number",
-            "maximum": 30.0,
-            "minimum": 1.0,
+            "maximum": 30,
+            "minimum": 1,
             "title": "Slide Duration Seconds",
-            "default": 5.0
+            "default": 5
           },
           "include_videos": {
             "type": "boolean",
@@ -4493,15 +4498,15 @@
           },
           "min_images": {
             "type": "integer",
-            "maximum": 50.0,
-            "minimum": 2.0,
+            "maximum": 50,
+            "minimum": 2,
             "title": "Min Images",
             "default": 5
           },
           "max_images": {
             "type": "integer",
-            "maximum": 100.0,
-            "minimum": 5.0,
+            "maximum": 100,
+            "minimum": 5,
             "title": "Max Images",
             "default": 30
           },
@@ -4552,8 +4557,8 @@
             "anyOf": [
               {
                 "type": "number",
-                "maximum": 30.0,
-                "minimum": 1.0
+                "maximum": 30,
+                "minimum": 1
               },
               {
                 "type": "null"
@@ -4576,8 +4581,8 @@
             "anyOf": [
               {
                 "type": "integer",
-                "maximum": 50.0,
-                "minimum": 2.0
+                "maximum": 50,
+                "minimum": 2
               },
               {
                 "type": "null"
@@ -4589,8 +4594,8 @@
             "anyOf": [
               {
                 "type": "integer",
-                "maximum": 100.0,
-                "minimum": 5.0
+                "maximum": 100,
+                "minimum": 5
               },
               {
                 "type": "null"
@@ -4751,7 +4756,7 @@
           "score": {
             "type": "number",
             "title": "Score",
-            "default": 0.0
+            "default": 0
           },
           "notified_at": {
             "anyOf": [
@@ -4892,50 +4897,50 @@
         "properties": {
           "favourite": {
             "type": "number",
-            "maximum": 1.0,
-            "minimum": 0.0,
+            "maximum": 1,
+            "minimum": 0,
             "title": "Favourite",
             "default": 0.22
           },
           "known_people": {
             "type": "number",
-            "maximum": 1.0,
-            "minimum": 0.0,
+            "maximum": 1,
+            "minimum": 0,
             "title": "Known People",
             "default": 0.2
           },
           "event_strength": {
             "type": "number",
-            "maximum": 1.0,
-            "minimum": 0.0,
+            "maximum": 1,
+            "minimum": 0,
             "title": "Event Strength",
             "default": 0.18
           },
           "face_presence": {
             "type": "number",
-            "maximum": 1.0,
-            "minimum": 0.0,
+            "maximum": 1,
+            "minimum": 0,
             "title": "Face Presence",
             "default": 0.12
           },
           "semantic_confidence": {
             "type": "number",
-            "maximum": 1.0,
-            "minimum": 0.0,
+            "maximum": 1,
+            "minimum": 0,
             "title": "Semantic Confidence",
             "default": 0.1
           },
           "gps_novelty": {
             "type": "number",
-            "maximum": 1.0,
-            "minimum": 0.0,
+            "maximum": 1,
+            "minimum": 0,
             "title": "Gps Novelty",
             "default": 0.1
           },
           "in_album": {
             "type": "number",
-            "maximum": 1.0,
-            "minimum": 0.0,
+            "maximum": 1,
+            "minimum": 0,
             "title": "In Album",
             "default": 0.08
           }
@@ -4950,8 +4955,8 @@
             "anyOf": [
               {
                 "type": "number",
-                "maximum": 1.0,
-                "minimum": 0.0
+                "maximum": 1,
+                "minimum": 0
               },
               {
                 "type": "null"
@@ -4963,8 +4968,8 @@
             "anyOf": [
               {
                 "type": "number",
-                "maximum": 1.0,
-                "minimum": 0.0
+                "maximum": 1,
+                "minimum": 0
               },
               {
                 "type": "null"
@@ -4976,8 +4981,8 @@
             "anyOf": [
               {
                 "type": "number",
-                "maximum": 1.0,
-                "minimum": 0.0
+                "maximum": 1,
+                "minimum": 0
               },
               {
                 "type": "null"
@@ -4989,8 +4994,8 @@
             "anyOf": [
               {
                 "type": "number",
-                "maximum": 1.0,
-                "minimum": 0.0
+                "maximum": 1,
+                "minimum": 0
               },
               {
                 "type": "null"
@@ -5002,8 +5007,8 @@
             "anyOf": [
               {
                 "type": "number",
-                "maximum": 1.0,
-                "minimum": 0.0
+                "maximum": 1,
+                "minimum": 0
               },
               {
                 "type": "null"
@@ -5015,8 +5020,8 @@
             "anyOf": [
               {
                 "type": "number",
-                "maximum": 1.0,
-                "minimum": 0.0
+                "maximum": 1,
+                "minimum": 0
               },
               {
                 "type": "null"
@@ -5028,8 +5033,8 @@
             "anyOf": [
               {
                 "type": "number",
-                "maximum": 1.0,
-                "minimum": 0.0
+                "maximum": 1,
+                "minimum": 0
               },
               {
                 "type": "null"
@@ -5274,7 +5279,7 @@
           "score": {
             "type": "number",
             "title": "Score",
-            "default": 0.0
+            "default": 0
           },
           "notified_at": {
             "anyOf": [
@@ -6623,7 +6628,7 @@
             "anyOf": [
               {
                 "type": "number",
-                "maximum": 300.0,
+                "maximum": 300,
                 "minimum": 0.5
               },
               {
@@ -6711,10 +6716,10 @@
           },
           "Video_Frame_Interval": {
             "type": "number",
-            "maximum": 300.0,
+            "maximum": 300,
             "minimum": 0.5,
             "title": "Video Frame Interval",
-            "default": 5.0
+            "default": 5
           },
           "Video_Face_Detection": {
             "type": "boolean",
