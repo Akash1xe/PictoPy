@@ -233,6 +233,7 @@ def get_cluster_images(cluster_id: str):
                 path=img["image_path"],
                 thumbnailPath=img["thumbnail_path"],
                 metadata=img["metadata"],
+                isFavourite=img["isFavourite"],
                 face_id=img["face_id"],
                 confidence=img["confidence"],
                 bbox=img["bbox"],
