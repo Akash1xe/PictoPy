@@ -183,13 +183,21 @@ describe('PersonImages favourite state (issue #681)', () => {
       ...makeImage('fav-1', '/personA/favorite.jpg'),
       isFavourite: true,
     };
-    fetchClusterImages.mockResolvedValue({
-      success: true,
-      data: {
-        images: [favoriteImage],
-        cluster_name: 'Alice',
-      },
-    });
+    fetchClusterImages
+      .mockResolvedValueOnce({
+        success: true,
+        data: {
+          images: [favoriteImage],
+          cluster_name: 'Alice',
+        },
+      })
+      .mockResolvedValueOnce({
+        success: true,
+        data: {
+          images: [{ ...favoriteImage, isFavourite: false }],
+          cluster_name: 'Alice',
+        },
+      });
 
     renderPerson('A');
 
@@ -204,6 +212,7 @@ describe('PersonImages favourite state (issue #681)', () => {
 
     await waitFor(() => {
       expect(heartIcon).not.toHaveAttribute('fill', 'currentColor');
+      expect(fetchClusterImages).toHaveBeenCalledTimes(2);
     });
     expect(togglefav).toHaveBeenCalledWith('fav-1');
   });
