@@ -4,6 +4,7 @@ import { Routes, Route, useNavigate } from 'react-router';
 import { PersonImages } from '@/pages/PersonImages/PersonImages';
 import type { Image, Video } from '@/types/Media';
 import * as apiFunctions from '@/api/api-functions';
+import * as favoriteApi from '@/api/api-functions/togglefav';
 
 jest.mock('@tauri-apps/api/core', () => ({
   invoke: jest.fn().mockResolvedValue(null),
@@ -15,7 +16,12 @@ jest.mock('@/api/api-functions', () => ({
   renameCluster: jest.fn(),
 }));
 
+jest.mock('@/api/api-functions/togglefav', () => ({
+  togglefav: jest.fn(),
+}));
+
 const fetchClusterImages = apiFunctions.fetchClusterImages as jest.Mock;
+const togglefav = favoriteApi.togglefav as jest.Mock;
 
 const makeImage = (id: string, path: string): Image => ({
   id,
@@ -106,6 +112,12 @@ const hasPersonB = (container: HTMLElement) =>
 
 beforeEach(() => {
   fetchClusterImages.mockReset();
+  togglefav.mockReset();
+  togglefav.mockResolvedValue({
+    success: true,
+    image_id: 'fav-1',
+    isFavourite: false,
+  });
   fetchClusterImages.mockImplementation(async ({ clusterId }) => ({
     success: true,
     data: {
@@ -162,6 +174,38 @@ describe('PersonImages (issue #1315: no flash of the previous page)', () => {
     await waitFor(() => {
       expect(hasPersonB(container)).toBe(true);
     });
+  });
+});
+
+describe('PersonImages favourite state (issue #681)', () => {
+  test('shows the stored favorite state and updates it after toggling', async () => {
+    const favoriteImage = {
+      ...makeImage('fav-1', '/personA/favorite.jpg'),
+      isFavourite: true,
+    };
+    fetchClusterImages.mockResolvedValue({
+      success: true,
+      data: {
+        images: [favoriteImage],
+        cluster_name: 'Alice',
+      },
+    });
+
+    renderPerson('A');
+
+    const favoriteButton = await screen.findByRole('button', {
+      name: 'Favourite',
+    });
+    const heartIcon = favoriteButton.querySelector('svg');
+
+    expect(heartIcon).toHaveAttribute('fill', 'currentColor');
+
+    fireEvent.click(favoriteButton);
+
+    await waitFor(() => {
+      expect(heartIcon).not.toHaveAttribute('fill', 'currentColor');
+    });
+    expect(togglefav).toHaveBeenCalledWith('fav-1');
   });
 });
 
